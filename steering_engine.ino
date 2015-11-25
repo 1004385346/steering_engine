@@ -8,32 +8,28 @@
 */
 
 #include <Servo.h>
-Servo myservo;  
+Servo myservo; 
+Servo myservo1; 
 int pos = 0;    
 
 void setup() {
   myservo.attach(9);  
+  myservo1.attach(8);
 }
 
 void loop() {
-  for (pos = 0; pos <= 360; pos += 1) { 
+  for (pos = 0; pos <= 90; pos += 1) { 
    
-    myservo.write(pos);              
+    myservo.write(pos); 
+    myservo1.write(pos);             
     delay(5);                      
   }
-  for (pos = 180; pos >= 0; pos -= 1) { 
+  for (pos = 90; pos >= 0; pos -= 1) { 
    
-    myservo.write(pos);              
+    myservo.write(pos);  
+    myservo1.write(pos);            
     delay(5);                      
   }
-  for (pos = 0; pos <= 720; pos += 1) { 
-   
-    myservo.write(pos);              
-    delay(15);                      
-  }
-  for (pos = 360; pos >= 0; pos -= 1) { 
-    myservo.write(pos);              
-    delay(15);                       
-  }
+ 
 }
 
